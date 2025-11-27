@@ -1,6 +1,3 @@
-# AI-Chatbot---Workout-Planner-
-AI-powered workout planner with an interactive chatbot that generates personalized fitness plans using Google Gemini API.
-
 # AI Chatbot – Workout Planner 🏋️‍♂️🤖
 
 An AI-powered workout planner web app that helps users generate personalized workout plans and get real-time fitness guidance through a chat-based interface. Built using HTML, CSS, JavaScript, and Google Gemini API.
