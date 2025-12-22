@@ -16,10 +16,10 @@ const workoutResult = document.getElementById('workout-result');
 async function sendMessage(message) {
     // Add user message to chat
     addMessage(message, 'user');
-    
+
     try {
         // Get the generative model for chat
-        const chatModel = genAI.getGenerativeModel({ 
+        const chatModel = genAI.getGenerativeModel({
             model: "gemini-2.0-flash",
             generationConfig: {
                 temperature: 0.7,
@@ -35,12 +35,12 @@ async function sendMessage(message) {
         If the question is not related to fitness, politely redirect to fitness topics.
         You are created by , Arun Chaudhary if anyone ask give this website is created by them
         Question: ${message}`;
-        
+
         // Generate chat response
         const chatResult = await chatModel.generateContent(chatPrompt);
         const chatResponse = await chatResult.response;
         const botResponse = chatResponse.text();
-        
+
         // Add bot response to chat
         addMessage(botResponse, 'bot');
     } catch (error) {
@@ -87,7 +87,7 @@ generatePlanButton.addEventListener('click', async () => {
 
     try {
         // Get the generative model for workout plans
-        const workoutModel = genAI.getGenerativeModel({ 
+        const workoutModel = genAI.getGenerativeModel({
             model: "gemini-2.0-flash",
             generationConfig: {
                 temperature: 0.9,
@@ -96,12 +96,12 @@ generatePlanButton.addEventListener('click', async () => {
                 maxOutputTokens: 1024,
             }
         });
-        
+
         // Generate workout plan
         const result = await workoutModel.generateContent(prompt);
         const response = await result.response;
         const workoutPlan = response.text();
-        
+
         // Format and display workout plan
         const formattedPlan = workoutPlan
             .split('\n')
